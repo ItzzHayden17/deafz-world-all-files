@@ -34,6 +34,12 @@ for card in card_elements:
     creator["cover"] = card.find("div",class_="team-member--thumbnail").img["src"] #Background
 
     creator["contentType"] = card.find("h4",class_="wps-team--member-desig wps-team--member-element").text
+
+    creator_nation = card.find("span",class_="wps--info-text")
+
+    if creator_nation :
+         creator["nation"] = creator_nation.text
+    
     
     creators.append(creator)
 
